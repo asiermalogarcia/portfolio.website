@@ -1,0 +1,468 @@
+/* ------------------------------ */
+/* COLOR SYSTEM - LIGHT BLUE THEME */
+/* ------------------------------ */
+:root {
+    --blue-light: #4da3ff;
+    --blue-dark: #1b5fcc;
+    --blue-soft: #e8f2ff;
+    --text-dark: #1b1b1b;
+    --text-soft: #555;
+    --bg-light: #f7f9fc;
+}
+
+/* ------------------------------ */
+/* GLOBAL STYLES                  */
+/* ------------------------------ */
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    transition: opacity 0.4s ease;
+}
+
+/* ------------------------------ */
+/* HEADER + NAVBAR                */
+/* ------------------------------ */
+header {
+    background: var(--blue-light);
+    padding: 30px;
+    text-align: center;
+    color: white;
+    border-bottom: 4px solid var(--blue-dark);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.navbar {
+    margin-top: 15px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+}
+
+.navbar a {
+    color: white;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.navbar a:hover {
+    background: var(--blue-dark);
+    color: #fff;
+}
+
+.navbar a:active {
+    background: #0d3a84;
+}
+
+/* ------------------------------ */
+/* TYPOGRAPHY                     */
+/* ------------------------------ */
+h1, h2, h3 {
+    font-family: "Poppins", sans-serif;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--blue-dark);
+}
+
+p {
+    line-height: 1.8;
+    color: var(--text-soft);
+}
+
+/* ------------------------------ */
+/* SECTIONS + CARDS               */
+/* ------------------------------ */
+section {
+    padding: 70px 12%;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ------------------------------ */
+/* PORTFOLIO GRID                 */
+/* ------------------------------ */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 24px;
+}
+
+.portfolio-item {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------ */
+/* LINKS + BUTTONS                */
+/* ------------------------------ */
+a {
+    color: var(--blue-dark);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #0e3b80;
+    text-decoration: underline;
+}
+
+button {
+    background: var(--blue-light);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: var(--blue-dark);
+    animation: pulse 0.4s ease-in-out;
+}
+
+button:active {
+    background: #103a78;
+}
+
+/* ------------------------------ */
+/* BACK TO TOP BUTTON             */
+/* ------------------------------ */
+#back-to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    background: var(--blue-dark);
+    color: white;
+    padding: 14px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+#back-to-top:hover {
+    background: var(--blue-light);
+}
+
+/* ------------------------------ */
+/* ANIMATIONS                     */
+/* ------------------------------ */
+.fade-in {
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+
+/* ------------------------------ */
+/* CSS LOADER                     */
+/* ------------------------------ */
+#loader {
+    width: 55px;
+    height: 55px;
+    border: 6px solid #ccc;
+    border-top-color: var(--blue-dark);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 80px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+body.loaded #loader {
+    display: none;
+}
+
+/* ------------------------------ */
+/* PREFERS REDUCED MOTION         */
+/* ------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* CARAS DEL MEMORY GAME */
+.card-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    font-size: 2rem;
+}
+
+.card-face.front {
+    background: var(--blue-light);
+    color: white;
+}
+
+.card-face.back {
+    background: white;
+    transform: rotateY(180deg);
+}
+
+/* -------- CONTACT FORM -------- */
+
+#contact form {
+    display: grid;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.form-row label {
+    width: 160px;
+    font-weight: 600;
+}
+
+.form-row input,
+.form-row input[type="range"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.rating-row output {
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+}
+
+#results {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+#results p {
+    margin: 8px 0;
+}
+
+/* Popup success message */
+#successPopup {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #1b5fcc;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+#successPopup.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------- MEMORY GAME STYLES -------- */
+
+#memory .memory-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+#memory .difficulty label {
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+#memory .buttons button {
+    margin-left: 8px;
+}
+
+.memory-panel {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.stats {
+    min-width: 140px;
+    background: var(--bg-light);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.board-container {
+    flex: 1;
+    min-width: 260px;
+}
+
+.board {
+    display: grid;
+    gap: 12px;
+    justify-content: center;
+    align-content: start;
+}
+
+/* Grid sizes */
+.board.grid-4x3 { grid-template-columns: repeat(4, minmax(60px, 1fr)); }
+.board.grid-6x4 { grid-template-columns: repeat(6, minmax(52px, 1fr)); }
+
+/* 🔧 FIX REAL PARA MOSTRAR EMOJIS */
+.memory-card {
+    background: white;
+    border-radius: 10px;
+    height: 80px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    position: relative;
+    perspective: 800px;
+}
+
+.memory-card .inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.45s;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.memory-card.flipped .inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card.matched {
+    box-shadow: 0 6px 26px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+    outline: 3px solid rgba(77,163,255,0.18);
+}
+
+@media (max-width: 700px) {
+    .board.grid-4x3 {
+        grid-template-columns: repeat(3, minmax(60px, 1fr));
+    }
+    .board.grid-6x4 {
+        grid-template-columns: repeat(4, minmax(60px, 1fr));
+    }
+    .memory-card {
+        height: 70px;
+    }
+}
+
+/* win message */
+.win-message {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #eaffff, #e8f2ff);
+    border: 1px solid #d7eefc;
+    font-weight: 700;
+    text-align: center;
+}
+/* --- FIX PARA QUE SE VEAN LOS EMOJIS --- */
+.memory-card .inner {
+    transform-style: preserve-3d;
+}
+
+.card-face {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.memory-card .card-face.back {
+    transform: rotateY(180deg);
+}
+
+/* cuando la carta está girada, mostrar la cara trasera */
+.memory-card.flipped .card-face.back {
+    transform: rotateY(0deg);
+}
+
+/* y ocultar la delantera */
+.memory-card.flipped .card-face.front {
+    transform: rotateY(180deg);
+}
+
